@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">ScalableVideoView</string>
+
+    <string name="scale_none">None</string>
+
+    <string name="scale_fit_xy">FitXY</string>
+    <string name="scale_fit_start">FitStart</string>
+    <string name="scale_fit_center">FitCenter</string>
+    <string name="scale_fit_end">FitEnd</string>
+
+    <string name="scale_left_top">LeftTop</string>
+    <string name="scale_left_center">LeftCenter</string>
+    <string name="scale_left_bottom">LeftBottom</string>
+    <string name="scale_center_top">CenterTop</string>
+    <string name="scale_center">Center</string>
+    <string name="scale_center_bottom">CenterBottom</string>
+    <string name="scale_right_top">RightTop</string>
+    <string name="scale_right_center">RightCenter</string>
+    <string name="scale_right_bottom">RightBottom</string>
+
+    <string name="scale_left_top_crop">LeftTopCrop</string>
+    <string name="scale_left_center_crop">LeftCenterCrop</string>
+    <string name="scale_left_bottom_crop">LeftBottomCrop</string>
+    <string name="scale_center_top_crop">CenterTopCrop</string>
+    <string name="scale_center_crop">CenterCrop</string>
+    <string name="scale_center_bottom_crop">CenterBottomCrop</string>
+    <string name="scale_right_top_crop">RightTopCrop</string>
+    <string name="scale_right_center_crop">RightCenterCrop</string>
+    <string name="scale_right_bottom_crop">RightBottomCrop</string>
+
+    <string name="scale_start_inside">StartInside</string>
+    <string name="scale_center_inside">CenterInside</string>
+    <string name="scale_end_inside">EndInside</string>
+
+    <string name="btn_next_to_list">View video as list</string>
+
+    <string name="sample_landscape">Landscape Video</string>
+    <string name="sample_portrait">Portrait Video</string>
+    <string name="sample_scale_title">%1$d: %2$s</string>
+</resources>
