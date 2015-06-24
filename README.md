@@ -1,6 +1,8 @@
 # ScalableVideoView
 
-Android Texture VideoView having a variety of scale types like the scale types of ImageView.  
+Android Texture VideoView having a variety of scale types like the scale types of ImageView.
+
+![Sample](/sample/sample.gif)
 
 # Release Note
 
