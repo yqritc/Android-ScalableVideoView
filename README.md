@@ -1,4 +1,6 @@
 # ScalableVideoView
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Download](https://api.bintray.com/packages/yqritc/maven/android-scalablevideoview/images/download.svg)](https://bintray.com/yqritc/maven/android-scalablevideoview/_latestVersion)
 
 Android Texture VideoView having a variety of scale types like the scale types of ImageView.
 
@@ -8,7 +10,7 @@ Android Texture VideoView having a variety of scale types like the scale types o
 
 [Release Note] (https://github.com/yqritc/Android-ScalableVideoView/releases)
 
-# Gradle (coming soon)
+# Gradle
 ```
 repositories {
     jcenter()
