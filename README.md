@@ -1,6 +1,9 @@
 # ScalableVideoView
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ScalableVideoView-green.svg?style=flat)](https://android-arsenal.com/details/1/2045)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Download](https://api.bintray.com/packages/yqritc/maven/android-scalablevideoview/images/download.svg)](https://bintray.com/yqritc/maven/android-scalablevideoview/_latestVersion)
+
+*__ImageView having same scale feature is also [available here](https://github.com/yqritc/Android-ScalableImageView)__*  
 
 Android Texture VideoView having a variety of scale types like the scale types of ImageView.
 
