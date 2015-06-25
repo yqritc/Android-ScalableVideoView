@@ -6,6 +6,9 @@ Android Texture VideoView having a variety of scale types like the scale types o
 
 ![Sample](/sample/sample.gif)
 
+# Sample
+<a href="https://play.google.com/store/apps/details?id=com.yqritc.scalablevideoview.sample"><img src="http://developer.android.com/images/brand/en_app_rgb_wo_60.png"/></a>
+
 # Release Note
 
 [Release Note] (https://github.com/yqritc/Android-ScalableVideoView/releases)
