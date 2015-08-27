@@ -7,6 +7,7 @@ import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RawRes;
@@ -14,7 +15,9 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Created by yqritc on 2015/06/11.
@@ -104,6 +107,16 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         }
     }
 
+    private void initializeMediaPlayer() {
+        if (mMediaPlayer == null) {
+            mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setOnVideoSizeChangedListener(this);
+            setSurfaceTextureListener(this);
+        } else {
+            mMediaPlayer.reset();
+        }
+    }
+
     public void setRawData(@RawRes int id) throws IOException {
         AssetFileDescriptor afd = getResources().openRawResourceFd(id);
         setDataSource(afd);
@@ -116,16 +129,35 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
     }
 
     private void setDataSource(@NonNull AssetFileDescriptor afd) throws IOException {
-        if (mMediaPlayer == null) {
-            mMediaPlayer = new MediaPlayer();
-            mMediaPlayer.setOnVideoSizeChangedListener(this);
-            setSurfaceTextureListener(this);
-        } else {
-            mMediaPlayer.reset();
-        }
-
-        mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+        setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
         afd.close();
+    }
+
+    public void setDataSource(@NonNull String path) throws IOException {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(path);
+    }
+
+    public void setDataSource(@NonNull Context context, @NonNull Uri uri,
+            @Nullable Map<String, String> headers) throws IOException {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(context, uri, headers);
+    }
+
+    public void setDataSource(@NonNull Context context, @NonNull Uri uri) throws IOException {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(context, uri);
+    }
+
+    public void setDataSource(@NonNull FileDescriptor fd, long offset, long length)
+            throws IOException {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(fd, offset, length);
+    }
+
+    public void setDataSource(@NonNull FileDescriptor fd) throws IOException {
+        initializeMediaPlayer();
+        mMediaPlayer.setDataSource(fd);
     }
 
     public void setScalableType(ScalableType scalableType) {
