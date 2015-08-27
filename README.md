@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.yqritc:android-scalablevideoview:1.0.0'
+    compile 'com.yqritc:android-scalablevideoview:1.0.1'
 }
 ```
 
