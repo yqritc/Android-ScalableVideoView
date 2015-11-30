@@ -42,9 +42,13 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder
         ScalableType scalableType = ScalableType.values()[position];
         holder.mTextView.setText(context.getString(R.string.sample_scale_title, position,
                 scalableType.toString()));
+        holder.setScalableType(scalableType);
+    }
 
+    @Override
+    public void onViewAttachedToWindow(ViewHolder holder) {
         setVideo(holder.mVideoView);
-        holder.mVideoView.setScalableType(scalableType);
+        holder.mVideoView.setScalableType(holder.mScalableType);
     }
 
     private void setVideo(final ScalableVideoView videoView) {
@@ -77,11 +81,16 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder
 
         TextView mTextView;
         ScalableVideoView mVideoView;
+        ScalableType mScalableType;
 
         public ViewHolder(View view) {
             super(view);
             mTextView = (TextView) view.findViewById(R.id.video_text);
             mVideoView = (ScalableVideoView) view.findViewById(R.id.video_view);
+        }
+
+        public void setScalableType(ScalableType type) {
+            mScalableType = type;
         }
     }
 }
