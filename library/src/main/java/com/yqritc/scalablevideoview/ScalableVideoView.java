@@ -165,16 +165,28 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         scaleVideoSize(getVideoWidth(), getVideoHeight());
     }
 
-    public void prepare(@Nullable MediaPlayer.OnPreparedListener listener)
+    public void prepare(@Nullable MediaPlayer.OnPreparedListener listener, @Nullable MediaPlayer.OnErrorListener eListener)
             throws IOException, IllegalStateException {
         mMediaPlayer.setOnPreparedListener(listener);
+        mMediaPlayer.setOnErrorListener(eListener);
         mMediaPlayer.prepare();
+    }
+
+    public void prepareAsync(@Nullable MediaPlayer.OnPreparedListener listener, @Nullable MediaPlayer.OnErrorListener eListener)
+            throws IllegalStateException {
+        mMediaPlayer.setOnPreparedListener(listener);
+        mMediaPlayer.setOnErrorListener(eListener);
+        mMediaPlayer.prepareAsync();
+    }
+
+    public void prepare(@Nullable MediaPlayer.OnPreparedListener listener)
+            throws IOException, IllegalStateException {
+        prepare(listener, null);
     }
 
     public void prepareAsync(@Nullable MediaPlayer.OnPreparedListener listener)
             throws IllegalStateException {
-        mMediaPlayer.setOnPreparedListener(listener);
-        mMediaPlayer.prepareAsync();
+        prepareAsync(listener, null);
     }
 
     public void prepare() throws IOException, IllegalStateException {
