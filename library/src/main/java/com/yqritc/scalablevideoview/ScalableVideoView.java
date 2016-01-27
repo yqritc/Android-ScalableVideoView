@@ -85,7 +85,6 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
             stop();
         }
         release();
-        mMediaPlayer = null;
     }
 
     @Override
@@ -113,7 +112,7 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
             mMediaPlayer.setOnVideoSizeChangedListener(this);
             setSurfaceTextureListener(this);
         } else {
-            mMediaPlayer.reset();
+            reset();
         }
     }
 
@@ -237,8 +236,12 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         mMediaPlayer.stop();
     }
 
-    public void release() {
+    public void reset() {
         mMediaPlayer.reset();
+    }
+
+    public void release() {
+        reset();
         mMediaPlayer.release();
         mMediaPlayer = null;
     }
