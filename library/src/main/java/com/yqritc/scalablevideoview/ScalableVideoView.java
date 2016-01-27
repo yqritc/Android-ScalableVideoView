@@ -240,5 +240,6 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
     public void release() {
         mMediaPlayer.reset();
         mMediaPlayer.release();
+        mMediaPlayer = null;
     }
 }
