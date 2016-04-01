@@ -135,28 +135,33 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
     public void setDataSource(@NonNull String path) throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(path);
+        this.prepare();
     }
 
     public void setDataSource(@NonNull Context context, @NonNull Uri uri,
             @Nullable Map<String, String> headers) throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(context, uri, headers);
+        this.prepare();
     }
 
     public void setDataSource(@NonNull Context context, @NonNull Uri uri) throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(context, uri);
+        this.prepare();
     }
 
     public void setDataSource(@NonNull FileDescriptor fd, long offset, long length)
             throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(fd, offset, length);
+        this.prepare();
     }
 
     public void setDataSource(@NonNull FileDescriptor fd) throws IOException {
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(fd);
+        this.prepare();
     }
 
     public void setScalableType(ScalableType scalableType) {
