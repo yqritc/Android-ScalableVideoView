@@ -188,6 +188,14 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         mMediaPlayer.setOnErrorListener(listener);
     }
 
+    public void setOnCompletionListener(@Nullable MediaPlayer.OnCompletionListener listener) {
+        mMediaPlayer.setOnCompletionListener(listener);
+    }
+
+    public void setOnInfoListener(@Nullable MediaPlayer.OnInfoListener listener) {
+        mMediaPlayer.setOnInfoListener(listener);
+    }
+
     public int getCurrentPosition() {
         return mMediaPlayer.getCurrentPosition();
     }
