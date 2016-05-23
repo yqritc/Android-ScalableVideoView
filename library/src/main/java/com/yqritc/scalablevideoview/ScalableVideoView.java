@@ -158,6 +158,11 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
         initializeMediaPlayer();
         mMediaPlayer.setDataSource(fd);
     }
+    
+    public void setOnInfoListener(MediaPlayer.OnInfoListener listener) {
+        initializeMediaPlayer();
+        mMediaPlayer.setOnInfoListener(listener);
+    }
 
     public void setScalableType(ScalableType scalableType) {
         mScalableType = scalableType;
