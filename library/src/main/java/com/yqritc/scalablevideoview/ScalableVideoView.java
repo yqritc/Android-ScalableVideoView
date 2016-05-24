@@ -111,6 +111,9 @@ public class ScalableVideoView extends TextureView implements TextureView.Surfac
             mMediaPlayer = new MediaPlayer();
             mMediaPlayer.setOnVideoSizeChangedListener(this);
             setSurfaceTextureListener(this);
+            if (getSurfaceTexture() != null) {
+                mMediaPlayer.setSurface(new Surface(getSurfaceTexture()));
+            }
         } else {
             reset();
         }
