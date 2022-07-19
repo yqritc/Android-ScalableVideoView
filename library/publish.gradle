@@ -1,0 +1,37 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId GROUP
+            version VERSION_NAME
+            artifactId ARTIFACT_ID
+            artifact "build/outputs/aar/library-release.aar"
+            pom.withXml {
+                Node root = asNode()
+                root.appendNode('name', ARTIFACT_ID)
+                root.appendNode('description', POM_DESCRIPTION)
+                root.appendNode('url', POM_URL)
+
+                def issues = root.appendNode('issueManagement')
+                issues.appendNode('system', 'github')
+                issues.appendNode('url', ISSUE_URL)
+
+                def scm = root.appendNode('scm')
+                scm.appendNode('url', POM_SCM_URL)
+                scm.appendNode('connection', POM_SCM_CONNECTION)
+                scm.appendNode('developerConnection', POM_SCM_DEV_CONNECTION)
+
+                def license = root.appendNode('licenses').appendNode('license')
+                license.appendNode('name', POM_LICENCE_NAME)
+                license.appendNode('url', POM_LICENCE_URL)
+                license.appendNode('distribution', POM_LICENCE_DIST)
+
+                def developer = root.appendNode('developers').appendNode('developer')
+                developer.appendNode('id', POM_DEVELOPER_ID)
+                developer.appendNode('name', POM_DEVELOPER_NAME)
+                developer.appendNode('email', POM_DEVELOPER_EMAIL)
+            }
+        }
+    }
+}

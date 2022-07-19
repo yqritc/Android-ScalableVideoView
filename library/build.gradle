@@ -16,3 +16,4 @@ dependencies {
 }
 
 apply from: 'android-artifacts.gradle'
+apply from: 'publish.gradle'
