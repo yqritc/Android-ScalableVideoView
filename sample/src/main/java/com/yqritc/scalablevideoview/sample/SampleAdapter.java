@@ -5,8 +5,8 @@ import com.yqritc.scalablevideoview.ScalableVideoView;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.support.annotation.RawRes;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.RawRes;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
