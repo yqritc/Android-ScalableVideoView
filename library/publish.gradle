@@ -1,5 +1,4 @@
 apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
 
 publishing {
     publications {
@@ -7,10 +6,7 @@ publishing {
             groupId GROUP
             version VERSION_NAME
             artifactId ARTIFACT_ID
-//            artifact androidJar
             artifact "build/outputs/aar/library-release.aar"
-            artifact androidJavadocsJar
-            artifact androidSourcesJar
             pom.withXml {
                 Node root = asNode()
                 root.appendNode('name', ARTIFACT_ID)
@@ -36,34 +32,6 @@ publishing {
                 developer.appendNode('name', POM_DEVELOPER_NAME)
                 developer.appendNode('email', POM_DEVELOPER_EMAIL)
             }
-        }
-    }
-}
-
-def getBintrayUserProperty() {
-    return hasProperty('bintrayUser') ? bintrayUser : ""
-}
-
-def getBintrayApiKeyProperty() {
-    return hasProperty('bintrayApiKey') ? bintrayApiKey : ""
-}
-
-bintray {
-    user = bintrayUserProperty
-    key = bintrayApiKeyProperty
-    publications = ['mavenJava']
-
-    dryRun = false
-    publish = false
-    pkg {
-        repo = 'maven'
-        name = ARTIFACT_ID
-        licenses = ['Apache-2.0']
-        labels = ['android']
-
-        version {
-            name = VERSION_NAME
-            vcsTag = VERSION_NAME
         }
     }
 }

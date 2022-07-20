@@ -19,11 +19,11 @@ Android Texture VideoView having a variety of scale types like the scale types o
 # Gradle
 ```
 repositories {
-    jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.yqritc:android-scalablevideoview:1.0.4'
+    compile 'com.yqritc:android-scalablevideoview:1.0.5'
 }
 ```
 

@@ -1,16 +1,19 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdk libs.versions.sdk.compile.get() as int
 
     defaultConfig {
         applicationId "com.yqritc.scalablevideoview.sample"
-        minSdkVersion MIN_SDK_VERSION as int
-        targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
+        minSdk libs.versions.sdk.min.get() as int
+        targetSdk libs.versions.sdk.target.get() as int
+
+        versionCode 1
+        versionName "1.0.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,8 +23,7 @@ android {
 }
 
 dependencies {
-    compile project(':library')
-//    compile 'com.yqritc:android-scalablevideoview:1.0.4'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
+    implementation project(':library')
+    implementation libs.android.recyclerview
+    implementation libs.android.appcompat
 }
