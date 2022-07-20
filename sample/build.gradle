@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk COMPILE_SDK_VERSION as int
+    compileSdk libs.versions.sdk.compile.get() as int
 
     defaultConfig {
         applicationId "com.yqritc.scalablevideoview.sample"
-        minSdk MIN_SDK_VERSION as int
-        targetSdk TARGET_SDK_VERSION as int
+        minSdk libs.versions.sdk.min.get() as int
+        targetSdk libs.versions.sdk.target.get() as int
 
         versionCode VERSION_CODE as int
         versionName VERSION_NAME

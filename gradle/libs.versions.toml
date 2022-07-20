@@ -1,4 +1,8 @@
 [versions]
+sdk-compile = "31"
+sdk-min = "14"
+sdk-target = "31"
+
 android-plugin = "7.2.1"
 android-appcompat = "1.4.2"
 android-recyclerview = "1.2.1"
