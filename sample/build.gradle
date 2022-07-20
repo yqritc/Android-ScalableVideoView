@@ -24,6 +24,6 @@ android {
 
 dependencies {
     implementation project(':library')
-    implementation "androidx.recyclerview:recyclerview:$RECYCLERVIEW_VERSION"
-    implementation "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
+    implementation libs.android.recyclerview
+    implementation libs.android.appcompat
 }

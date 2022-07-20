@@ -15,7 +15,7 @@ android {
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
+    implementation libs.android.appcompat
 }
 
 apply from: 'android-artifacts.gradle'
