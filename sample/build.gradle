@@ -10,8 +10,8 @@ android {
         minSdk libs.versions.sdk.min.get() as int
         targetSdk libs.versions.sdk.target.get() as int
 
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
+        versionCode 1
+        versionName "1.0.0"
     }
 
     buildTypes {
